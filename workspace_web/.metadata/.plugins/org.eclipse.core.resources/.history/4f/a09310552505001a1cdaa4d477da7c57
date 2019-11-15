@@ -1,0 +1,13 @@
+package snippet;
+
+public class Snippet {
+	create table product{
+	    productNum              number,
+	    productName             varchar2(20),
+	    productPrice            number,
+	    productDescription      varchar2(4000),
+	    productImgPath          varchar2(1000),
+	    constraint          product_productNum_pk primary key(productNum)
+	};
+}
+

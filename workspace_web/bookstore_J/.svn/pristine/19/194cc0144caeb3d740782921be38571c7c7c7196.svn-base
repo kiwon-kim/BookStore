@@ -1,0 +1,108 @@
+package com.book.dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.util.ArrayList;
+
+import com.book.dbconn.DBConn;
+import com.book.vo.BookVO;
+
+public class BookDAO {
+
+	
+	private static BookDAO dao= null;
+	
+	private BookDAO() {}
+	
+	public static BookDAO getInstance() {
+		if(dao==null) {
+			dao = new BookDAO();
+		}
+		return dao;
+	}
+	
+//	 bookNum number,
+//	    bookName varchar2(20),
+//	    bookPrice number,
+//	    bookDescription varchar2(4000),
+//	    bookImgPath varchar2(1000),
+	
+	public ArrayList<BookVO> selectAll() {
+		Connection conn = null; //connection 객체 생성
+		Statement stmt = null;  //SQL 등록, 실행
+		ResultSet rs = null;    //DB 결과값 받을 공간
+		ArrayList<BookVO> list = new ArrayList<BookVO>();
+		try {
+			conn = DBConn.getConnection();
+			stmt = conn.createStatement(); //stmt 사용준비 
+											//sql 사용준비
+			String sql = "select * from book";
+			rs = stmt.executeQuery(sql); //sql을 실행한 값을 
+										//rs에 담아줌
+			while(rs.next()) {
+				BookVO vo = new BookVO();
+				vo.setBookNum(rs.getInt("bookNum"));
+				vo.setBookName(rs.getString("bookName"));
+				vo.setBookPrice(rs.getInt("bookPrice"));
+				vo.setBookDescription(rs.getString("bookDescription"));
+				vo.setBookImgPath(rs.getString("bookImgPath"));
+				list.add(vo);
+			}
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		} finally {
+			close(stmt, rs, conn);
+		}
+		
+		return list;
+		
+	}
+	
+	
+	
+	
+	
+	
+	
+	public void close(Statement stmt, ResultSet rs, Connection conn) {
+		try {
+			if(stmt!=null) {
+				stmt.close();
+			}
+			if(rs !=null) {
+				rs.close();
+			}
+			if(conn !=null) {
+				conn.close();
+			}
+			
+		} catch (Exception e2) {
+			// TODO: handle exception
+			e2.printStackTrace();
+		}
+	}
+	
+	public void close(PreparedStatement pstmt, ResultSet rs, Connection conn) {
+		try {
+			if(pstmt!=null) {
+				pstmt.close();
+			}
+			if(rs !=null) {
+				rs.close();
+			}
+			if(conn !=null) {
+				conn.close();
+			}
+			
+		} catch (Exception e2) {
+			// TODO: handle exception
+			e2.printStackTrace();
+		}
+	}
+	
+	
+}
+

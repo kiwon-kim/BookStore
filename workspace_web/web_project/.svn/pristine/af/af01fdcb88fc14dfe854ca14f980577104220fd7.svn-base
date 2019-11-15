@@ -1,0 +1,81 @@
+<%@page import="com.kccistc.shop.member.vo.MemberVO"%>
+<%@page import="java.util.ArrayList"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="<%=request.getContextPath() %>/css/members.css">
+
+</head>
+<body>
+<%@ include file="header.jsp" %>
+<section>
+  <div class="table_wrapper">
+  <div class="table">
+  
+<!--   //	ID	VARCHAR2(30 BYTE) -->
+<!-- //	PWD	VARCHAR2(30 BYTE) -->
+<!-- //	EMAIL	VARCHAR2(50 BYTE) -->
+<!-- //	GENDER	CHAR(1 BYTE) -->
+<!-- //	JOINDATE	DATE -->
+<!-- //	PHONENUM	VARCHAR2(20 BYTE) -->
+
+    <div class="row header">
+      <div class="cell">
+        ID
+      </div>
+      <div class="cell">
+        PWD
+      </div>
+      <div class="cell">
+        EMAIL
+      </div>
+      <div class="cell">
+        GENDER
+      </div>
+      <div class="cell">
+        PHONENUM
+      </div>
+      <div class="cell">
+        JOINDATE
+      </div>
+    </div>
+   <%-- <%
+    	ArrayList<MemberVO> mlist = (ArrayList<MemberVO>)request.getAttribute("mlist");
+    	for(int i=0; i < mlist.size() ; i++){
+    		
+    	
+    %> --%>
+    
+    <c:forEach items="${mlist }" var="mvo">
+    <div class="row">
+      <div class="cell" data-title="Name">
+         ${mvo.id }
+      </div>
+      <div class="cell" data-title="Age">
+         ${mvo.pwd }
+      </div>
+      <div class="cell" data-title="Occupation">
+         ${mvo.email }
+      </div>
+      <div class="cell" data-title="Location">
+         ${mvo.gender }
+      </div>
+      <div class="cell" data-title="Location">
+        ${mvo.phonenum }
+      </div>
+      <div class="cell" data-title="Location">
+         ${mvo.joindate}
+      </div>
+    </div>
+    </c:forEach>
+  	</div>
+  </div>
+ </section>
+ <%@ include file="footer.jsp" %>
+</body>
+</html>

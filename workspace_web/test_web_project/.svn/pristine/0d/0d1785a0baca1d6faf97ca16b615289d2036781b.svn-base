@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="join.css">
+<style type="text/css">
+	h1 {
+		color : red;
+	}
+	#id_tag{ /*#아이디*/
+		color : #399a21;
+	}
+</style>
+
+</head> 
+<body>
+	<h1 style="color : skyblue;">회원가입</h1>
+	<form action="test.html">
+		<table border="1">
+			<tr>
+				<td id="id_tag" class="class_tag">ID</td>
+				<td><input type="text"></td>
+			</tr>
+			<tr>
+				<td class="class_tag">Password</td>
+				<td><input type="password"></td>
+			</tr>
+			<tr>
+				<td class="class_tag">이름</td>
+				<td><input type="text"></td>
+			</tr>
+			<tr>
+				<td class="class_tag">email</td>
+				<td><input type="text"></td>
+			</tr>
+			<tr>
+				<td>취미</td>
+				<td>
+					<input type="checkbox" value="축구">축구
+					<input type="checkbox" value="농구">농구
+					<input type="checkbox" value="야구">야구
+					<input type="checkbox" value="수영">수영
+				</td>
+			</tr>
+			<tr>
+				<td>성별</td>
+				<td>
+					<input type="radio" name="gender" value="남">남
+					<input type="radio" name="gender" value="여">여
+				</td>
+			</tr>
+			<tr>
+				<td>사진</td>
+				<td><input type="file"></td>
+			</tr>
+			<tr>
+				<td>자기소개</td>
+				<td>
+					<textarea rows="10" cols="10"></textarea>
+				</td>
+			</tr>
+			
+			<tr>
+				<td colspan="2">
+					<input type="button" value="버튼1">
+					<input type="reset" value="리셋">
+					<input type="submit" value="가입">
+				</td>
+			</tr>
+		</table>
+		<hr>
+		<h1>회원가입 footer</h1>
+	</form>
+</body>
+</html>

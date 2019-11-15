@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+	id="WebApp_ID" version="3.1">
+	<resource-ref>
+		<res-ref-name>jdbc/myoracle</res-ref-name>
+		<res-type>javax.sql.DataSource</res-type>
+		<res-auth>Container</res-auth>
+	</resource-ref>
+
+	<servlet>
+		<servlet-name>LoginController</servlet-name>
+		<servlet-class>com.kccistc.shop.controller.LoginController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>LoginController</servlet-name>
+		<url-pattern>/LoginController</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>LogoutController</servlet-name>
+		<servlet-class>com.kccistc.book.LogoutController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>LogoutController</servlet-name>
+		<url-pattern>/LogoutController</url-pattern>
+	</servlet-mapping>
+
+
+
+	<servlet>
+		<servlet-name>LogoutController</servlet-name>
+		<servlet-class>com.kccistc.book.LogoutController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>LogoutController</servlet-name>
+		<url-pattern>/LogoutController</url-pattern>
+	</servlet-mapping>
+
+
+	<servlet>
+		<servlet-name>membersSelectAllController</servlet-name>
+		<servlet-class>com.kccistc.shop.controller.MembersSelectAllController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>membersSelectAllController</servlet-name>
+		<url-pattern>/MembersSelectAllController</url-pattern>
+	</servlet-mapping>
+
+
+	<servlet>
+		<servlet-name>ProductRegistController</servlet-name>
+		<servlet-class>com.kccistc.shop.controller.ProductRegistController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ProductRegistController</servlet-name>
+		<url-pattern>/ProductRegistController</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>ShopSelectAllController</servlet-name>
+		<servlet-class>com.kccistc.shop.controller.ShopSelectAllController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ShopSelectAllController</servlet-name>
+		<url-pattern>/ShopSelectAllController</url-pattern>
+	</servlet-mapping>
+
+
+
+
+	<servlet>
+		<servlet-name>pageController</servlet-name>
+		<servlet-class>com.kccistc.shop.controller.PageController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>pageController</servlet-name>
+		<url-pattern>*.do</url-pattern>
+	</servlet-mapping>
+
+
+</web-app>
